@@ -1,0 +1,4 @@
+# Ignore XAMPP configuration files and database files
+*.sql
+db_connect.php
+.env
