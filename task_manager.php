@@ -86,9 +86,15 @@ $result = $conn->query($sql);
                                         Completion</button>
                                 </td>
                                 <td>
-                                    <button class="btn btn-danger"
-                                        onclick="deleteTask(<?php echo $row['id']; ?>)">Delete</button>
-                                </td>
+                                <form action="update_name.php" method="POST" style="display:inline;">
+                                    <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                                    <input type="text" name="new_name" value="<?php echo $row['task_name']; ?>" required>
+                                    <button type="submit" class="btn btn-warning">Update</button>
+                                </form>
+
+                                <!-- Delete Button -->
+                                <button class="btn btn-danger" onclick="deleteTask(<?php echo $row['id']; ?>)">Delete</button>
+                            </td>
                             </tr>
                         <?php endwhile; ?>
                     </tbody>
